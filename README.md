@@ -20,7 +20,7 @@ yarn add -D svelte-search
   let value = "";
 </script>
 
-<Search bind:value on:submit={() => { console.log('search for', value); }} />
+<Search bind:value on:submit={() => { console.log("search for", value); }} />
 ```
 
 ### Debounced value
@@ -39,25 +39,25 @@ The default `debounceValue` is `250`.
 
 ## API
 
-This component forward `$$restProps` to the input element.
+This component forwards `$$restProps` to the input element.
 
-| Property name | Value                                 |
-| ------------- | ------------------------------------- |
-| id            | `string` (default: `<random string>`) |
-| label         | `string` (default: `"Search"`)        |
-| hideLabel     | `boolean` (default: `false`)          |
-| name          | `string` (default: `"search"`)        |
-| value         | `string` (default: `"value"`)         |
-| debounce      | `boolean` (default: `false`)          |
-| debounceValue | `number` (default: `250`)             |
+| Property name | Value                          |
+| :------------ | :----------------------------- |
+| id            | `string`                       |
+| label         | `string` (default: `"Search"`) |
+| hideLabel     | `boolean` (default: `false`)   |
+| name          | `string` (default: `"search"`) |
+| value         | `string` (default: `"value"`)  |
+| debounce      | `boolean` (default: `false`)   |
+| debounceValue | `number` (default: `250`)      |
 
 ## Forwarded events
 
 | Event name   | Description                                                                                                      |
-| ------------ | ---------------------------------------------------------------------------------------------------------------- |
-| `on:input`   | inputted value                                                                                                   |
+| :----------- | :--------------------------------------------------------------------------------------------------------------- |
+| `on:input`   | triggered if the value changes                                                                                   |
 | `on:type`    | alias for `on:input`; dispatched when `debounce` is enabled                                                      |
-| `on:change`  | triggered if value changes after blurring                                                                        |
+| `on:change`  | triggered if the value changes after blurring                                                                    |
 | `on:focus`   | triggered when the input element is focused                                                                      |
 | `on:blur`    | triggered when the input element is blurred                                                                      |
 | `on:keydown` | triggered when any key is pressed [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event) |
