@@ -77,6 +77,7 @@
     border-radius: 0.25rem;
     outline: 2px solid #e0e0e0;
     margin-right: 0.5rem;
+    margin-bottom: 0.25rem;
   }
 
   button:active {
@@ -136,7 +137,7 @@
     on:click={() => {
       ref.clear();
     }}>
-    Programmatically clear input
+    Clear input
   </button>
 
   <button
@@ -144,7 +145,7 @@
     on:click={() => {
       ref.focus();
     }}>
-    Programmatically focus input
+    Focus input
   </button>
 </div>
 
