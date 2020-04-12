@@ -1,0 +1,39 @@
+{
+  "name": "svelte-search",
+  "version": "0.1.0",
+  "license": "MIT",
+  "description": "Customizable search component for Svelte",
+  "author": "Eric Liu (https://github.com/metonym)",
+  "svelte": "src/index.js",
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "sideEffects": false,
+  "scripts": {
+    "prepublishOnly": "rollup -c"
+  },
+  "peerDependencies": {
+    "svelte": "^3.20.x"
+  },
+  "devDependencies": {
+    "rollup": "^2.6.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.2.1",
+    "svelte": "^3.20.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/metonym/svelte-search.git"
+  },
+  "homepage": "https://github.com/metonym/svelte-search",
+  "bugs": "https://github.com/metonym/svelte-search/issues",
+  "keywords": [
+    "svelte",
+    "svelte component",
+    "search",
+    "debounce"
+  ],
+  "files": [
+    "lib",
+    "src"
+  ]
+}
