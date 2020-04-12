@@ -154,7 +154,7 @@
     <li>
       {#if event.type === 'on:type'}(debounced){/if}
       {event.type}
-      <span class="tag">{value}</span>
+      <span class="tag">{event.value}</span>
     </li>
   {/each}
 </ul>
