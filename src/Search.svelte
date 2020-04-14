@@ -85,7 +85,7 @@
   role="search"
   aria-labelledby={id}
   on:submit|preventDefault>
-  <label for={id} class:hide-label={hideLabel}>{label}</label>
+  <label id="{id}-label" for={id} class:hide-label={hideLabel}>{label}</label>
   <input
     {...$$restProps}
     bind:this={input}
