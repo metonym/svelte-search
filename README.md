@@ -20,12 +20,14 @@ yarn add -D svelte-search
   let value = "";
 </script>
 
-<Search bind:value on:submit={() => { console.log("search for", value); }} />
+<Search bind:value on:submit="{() => { console.log('search for', value); }}" />
 ```
 
 ### Debounced value
 
-The default `debounceValue` is `250`.
+Debounce the search input by using the `debounce` prop.
+
+The default `debounceValue` is `250` ms.
 
 ```html
 <script>
@@ -83,7 +85,7 @@ This component forwards `$$restProps` to the input element.
   let ref;
 </script>
 
-<Search bind:this={ref} />
+<Search bind:ref />
 
 <!-- Focus -->
 <button on:click={() => { ref.focus(); }}>Focus</button>
