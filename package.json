@@ -15,10 +15,10 @@
     "svelte": "^3.20.x"
   },
   "devDependencies": {
-    "rollup": "^2.6.0",
+    "rollup": "^2.23.0",
     "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.2.1",
-    "svelte": "^3.20.x"
+    "rollup-plugin-svelte": "^5.2.3",
+    "svelte": "^3.24.0"
   },
   "repository": {
     "type": "git",
