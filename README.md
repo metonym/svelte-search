@@ -7,13 +7,13 @@
 
 ## Install
 
-```bash
+```sh
 yarn add -D svelte-search
 ```
 
 ## Usage
 
-```html
+```svelte
 <script>
   import Search from "svelte-search";
 
@@ -29,7 +29,7 @@ Debounce the search input by using the `debounce` prop.
 
 The default `debounceValue` is `250` ms.
 
-```html
+```svelte
 <script>
   import Search from "svelte-search";
 
@@ -43,7 +43,7 @@ The default `debounceValue` is `250` ms.
 
 This component forwards `$$restProps` to the input element.
 
-| Property name | Value                          |
+| Prop name     | Value                          |
 | :------------ | :----------------------------- |
 | id            | `string`                       |
 | label         | `string` (default: `"Search"`) |
@@ -68,7 +68,7 @@ This component forwards `$$restProps` to the input element.
 
 ### Declarative
 
-```html
+```svelte
 <!-- Focus -->
 <Search autofocus />
 
@@ -76,9 +76,9 @@ This component forwards `$$restProps` to the input element.
 <Search value="" />
 ```
 
-### Imperative (i.e. programmatic)
+### Imperative (programmatic)
 
-```html
+```svelte
 <script>
   import Search from "svelte-search";
 
