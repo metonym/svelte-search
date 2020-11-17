@@ -9,6 +9,8 @@
 
 ```sh
 yarn add -D svelte-search
+# OR
+npm i -D svelte-search
 ```
 
 ## Usage
