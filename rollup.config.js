@@ -1,17 +1,25 @@
 import resolve from "@rollup/plugin-node-resolve";
 import svelte from "rollup-plugin-svelte";
+import createConfig from "svelte-readme";
 import pkg from "./package.json";
 
-export default ["es", "umd"].map((format) => {
-  const UMD = format === "umd";
+const DEV = process.env.ROLLUP_WATCH;
+const BUNDLE = process.env.BUNDLE === "true";
 
-  return {
-    input: "src",
-    output: {
-      format,
-      file: UMD ? pkg.main : pkg.module,
-      name: UMD ? "svelte-search" : undefined,
-    },
-    plugins: [svelte(), resolve()],
-  };
-});
+export default () => {
+  if (!BUNDLE) return createConfig({ minify: !DEV, pkg });
+
+  return ["es", "umd"].map((format) => {
+    const UMD = format === "umd";
+
+    return {
+      input: pkg.svelte,
+      output: {
+        format,
+        file: UMD ? pkg.main : pkg.module,
+        name: UMD ? pkg.name : undefined,
+      },
+      plugins: [svelte(), resolve()],
+    };
+  });
+};

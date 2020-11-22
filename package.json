@@ -10,18 +10,19 @@
   "types": "./types/index.d.ts",
   "sideEffects": false,
   "scripts": {
-    "dev": "svite",
-    "build": "svite build --base= --assetsDir=assets",
-    "deploy": "npx gh-pages -d dist",
-    "prepack": "rollup -c"
+    "dev": "rollup -cw",
+    "build": "rollup -c",
+    "deploy": "npx gh-pages -d public",
+    "prepack": "BUNDLE=true rollup -c"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^10.0.0",
     "@tsconfig/svelte": "^1.0.10",
     "rollup": "^2.33.2",
     "rollup-plugin-svelte": "^6.1.1",
+    "rollup-plugin-terser": "^7.0.2",
     "svelte": "^3.29.7",
-    "svite": "^0.8.0",
+    "svelte-readme": "^0.1.2",
     "typescript": "^4.0.5"
   },
   "repository": {
@@ -40,5 +41,8 @@
     "lib",
     "src",
     "types"
-  ]
+  ],
+  "prettier": {
+    "printWidth": 120
+  }
 }
