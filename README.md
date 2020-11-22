@@ -106,7 +106,7 @@ This component forwards `$$restProps` to the input element.
 
 [MIT](LICENSE)
 
-[npm]: https://img.shields.io/npm/v/svelte-search.svg?color=blue
+[npm]: https://img.shields.io/npm/v/svelte-search.svg?color=%23161616
 [npm-url]: https://npmjs.com/package/svelte-search
 [build]: https://travis-ci.com/metonym/svelte-search.svg?branch=master
 [build-badge]: https://travis-ci.com/metonym/svelte-search
