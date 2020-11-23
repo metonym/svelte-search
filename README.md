@@ -94,7 +94,7 @@ This component forwards `$$restProps` to the input element.
 | `on:change`  | triggered if the value changes after blurring                                                                    |
 | `on:focus`   | triggered when the input element is focused                                                                      |
 | `on:blur`    | triggered when the input element is blurred                                                                      |
-| `on:keydown` | triggered when any key is pressed [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Document/keydown_event) |
+| `on:keydown` | triggered when any key is pressed |
 
 ## Notes
 
