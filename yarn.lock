@@ -192,6 +192,11 @@ has@^1.0.3:
   dependencies:
     function-bind "^1.1.1"
 
+is-absolute-url@^3.0.0:
+  version "3.0.3"
+  resolved "https://registry.npmjs.org/is-absolute-url/-/is-absolute-url-3.0.3.tgz#96c6a22b6a23929b11ea0afb1836c36ad4a5d698"
+  integrity sha512-opmNIX7uFnS96NtPmhWQgQx6/NYFgsUXYMllcfzwWKUMwfo8kku1TvE6hkNcH+Q1ts5cMVrsY7j0bxXQDciu9Q==
+
 is-core-module@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/is-core-module/-/is-core-module-2.1.0.tgz#a4cc031d9b1aca63eecbd18a650e13cb4eeab946"
@@ -203,6 +208,13 @@ is-module@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-module/-/is-module-1.0.0.tgz#3258fb69f78c14d5b815d664336b4cffb6441591"
   integrity sha1-Mlj7afeMFNW4FdZkM2tM/7ZEFZE=
+
+is-relative-url@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.npmjs.org/is-relative-url/-/is-relative-url-3.0.0.tgz#f623c8e26baa5bd3742b3b7ec074f50f3b45b3f3"
+  integrity sha512-U1iSYRlY2GIMGuZx7gezlB5dp1Kheaym7zKzO1PV06mOihiWTXejLwm4poEJysPyXF+HtK/BEd0DVlcCh30pEA==
+  dependencies:
+    is-absolute-url "^3.0.0"
 
 jest-worker@^26.2.1:
   version "26.6.2"
@@ -324,7 +336,7 @@ rollup-pluginutils@^2.8.2:
   dependencies:
     estree-walker "^0.6.1"
 
-rollup@^2.33.2:
+rollup@^2.33.2, rollup@^2.33.3:
   version "2.33.3"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.33.3.tgz#ae72ce31f992b09a580072951bfea76e9df17342"
   integrity sha512-RpayhPTe4Gu/uFGCmk7Gp5Z9Qic2VsqZ040G+KZZvsZYdcuWaJg678JeDJJvJeEQXminu24a2au+y92CUWVd+w==
@@ -385,18 +397,21 @@ supports-color@^7.0.0:
   dependencies:
     has-flag "^4.0.0"
 
-svelte-readme@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/svelte-readme/-/svelte-readme-0.1.2.tgz#210d3bfe61892bb31dc0afa0c28eadaf8ce1450c"
-  integrity sha512-pM7hMZn3PinaSJuOBBlaMSRBMsHoTI7L0Yy5sB6GWctE9JTc5Pd6Uw8t37BihLMfHZKT0ZUciNHqLJm/UlRCjQ==
+svelte-readme@^0.3.1:
+  version "0.3.1"
+  resolved "https://registry.npmjs.org/svelte-readme/-/svelte-readme-0.3.1.tgz#8d8e1461fb2b6eead13fc66d0f66201cb769be7f"
+  integrity sha512-MghClHhWJ/EIhuC9JMEowb42Z19c1WVJ1dwQGvTYCMvb+qDLpbU2XkShlH7kL3wN5BAbAwYWP0Y3BVVcDm7kBg==
   dependencies:
     "@rollup/plugin-node-resolve" "^10.0.0"
     "@rollup/plugin-virtual" "^2.0.3"
+    is-relative-url "^3.0.0"
     markdown-it "^12.0.2"
     prettier "^2.2.0"
     prettier-plugin-svelte "^1.4.1"
     prism-svelte "^0.4.7"
     prismjs "^1.22.0"
+    rollup "^2.33.3"
+    rollup-plugin-svelte "^6.1.1"
     rollup-plugin-terser "^7.0.2"
 
 svelte@^3.29.7:
