@@ -4,6 +4,8 @@
 
 > Customizable search input component for Svelte.
 
+This is a plain search component composed using semantic `form` and `input` elements. Check out [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search component with dropdown results.
+
 <!-- TOC -->
 
 ## Install
@@ -165,9 +167,5 @@ Svelte version 3.31 or greater is required to use this component with TypeScript
 
 [MIT](LICENSE)
 
-[npm]: https://img.shields.io/npm/v/svelte-search.svg?color=%23161616
+[npm]: https://img.shields.io/npm/v/svelte-search.svg?color=%23ff3e00&style=for-the-badge
 [npm-url]: https://npmjs.com/package/svelte-search
-
-```
-
-```
