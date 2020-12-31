@@ -1,8 +1,8 @@
 {
   "name": "svelte-search",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "license": "MIT",
-  "description": "Customizable search component for Svelte",
+  "description": "Customizable search input component for Svelte",
   "author": "Eric Liu (https://github.com/metonym)",
   "svelte": "./src/index.js",
   "main": "./lib/index.js",
@@ -13,16 +13,13 @@
     "dev": "rollup -cw",
     "build": "rollup -c",
     "deploy": "npx gh-pages -d dist",
+    "svelte-check": "svelte-check",
     "prepack": "BUNDLE=true rollup -c"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^10.0.0",
-    "@tsconfig/svelte": "^1.0.10",
-    "rollup": "^2.33.2",
-    "rollup-plugin-svelte": "^6.1.1",
-    "svelte": "^3.29.7",
-    "svelte-readme": "^1.0.0",
-    "typescript": "^4.0.5"
+    "svelte": "^3.31.0",
+    "svelte-check": "^1.1.24",
+    "svelte-readme": "^2.1.2"
   },
   "repository": {
     "type": "git",
@@ -40,8 +37,5 @@
     "lib",
     "src",
     "types"
-  ],
-  "prettier": {
-    "printWidth": 120
-  }
+  ]
 }

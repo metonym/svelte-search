@@ -1,7 +1,4 @@
 .DS_Store
-*.tgz
-/lib
 /node_modules
+/lib
 /dist
-yarn-debug.log*
-yarn-error.log*

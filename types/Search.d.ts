@@ -1,13 +1,24 @@
 /// <reference types="svelte" />
+import { SvelteComponentTyped } from "svelte";
 
 export interface SearchProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["input"]> {
   /**
-   * @default "search" + Math.random().toString(36)
+   * @default ""
    */
-  id?: string;
+  value?: string;
 
   /**
-   * @default "Search"
+   * @default false
+   */
+  autofocus?: boolean;
+
+  /**
+   * @default 0
+   */
+  debounce?: number;
+
+  /**
+   * @default "Label"
    */
   label?: string;
 
@@ -17,47 +28,27 @@ export interface SearchProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNam
   hideLabel?: boolean;
 
   /**
-   * @default "search"
+   * @default "search" + Math.random().toString(36)
    */
-  name?: string;
+  id?: string;
 
   /**
-   * @default ""
+   * @default null
    */
-  value?: string;
-
-  /**
-   * @default false
-   */
-  debounce?: boolean;
-
-  /**
-   * @default 250
-   */
-  debounceValue?: number;
-
-  /**
-   * @default () => { value = ""; }
-   */
-  clear?: () => any;
-
-  /**
-   * @default () => { input.focus(); }
-   */
-  focus?: () => any;
+  ref?: null | HTMLInputElement;
 }
 
-export default class Search {
-  $$prop_def: SearchProps;
-  $$slot_def: {};
-
-  $on(eventname: "submit", cb: (event: WindowEventMap["submit"]) => void): () => void;
-  $on(eventname: "input", cb: (event: WindowEventMap["input"]) => void): () => void;
-  $on(eventname: "change", cb: (event: WindowEventMap["change"]) => void): () => void;
-  $on(eventname: "focus", cb: (event: WindowEventMap["focus"]) => void): () => void;
-  $on(eventname: "blur", cb: (event: WindowEventMap["blur"]) => void): () => void;
-  $on(eventname: "keydown", cb: (event: WindowEventMap["keydown"]) => void): () => void;
-  $on(eventname: "type", cb: (event: CustomEvent<any>) => void): () => void;
-  $on(eventname: "clear", cb: (event: CustomEvent<any>) => void): () => void;
-  $on(eventname: string, cb: (event: Event) => void): () => void;
-}
+export default class Search extends SvelteComponentTyped<
+  SearchProps,
+  {
+    type: CustomEvent<string>;
+    clear: CustomEvent<any>;
+    submit: WindowEventMap["submit"];
+    input: WindowEventMap["input"];
+    change: WindowEventMap["change"];
+    focus: WindowEventMap["focus"];
+    blur: WindowEventMap["blur"];
+    keydown: WindowEventMap["keydown"];
+  },
+  { label: {} }
+> {}

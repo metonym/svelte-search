@@ -1,64 +1,49 @@
 <script>
-  export let id = "search" + Math.random().toString(36);
-  export let label = "Search";
-  export let hideLabel = false;
-  export let name = "search";
+  /**
+   * @event {string} type
+   * @event {any} clear
+   */
+
   export let value = "";
-  export let debounce = false;
-  export let debounceValue = 250;
-  export function clear() {
-    value = "";
-  }
-  export function focus() {
-    input.focus();
-  }
+  export let autofocus = false;
+  export let debounce = 0;
+  export let label = "Label";
+  export let hideLabel = false;
+  export let id = "search" + Math.random().toString(36);
+  export let ref = null;
 
   import { createEventDispatcher, onMount, afterUpdate } from "svelte";
 
   const dispatch = createEventDispatcher();
 
   let prevValue = value;
-  let input = undefined;
-  let calling = false;
   let timeout = undefined;
+  let calling = false;
 
   function debounced(cb) {
     if (calling) return;
-
     calling = true;
-
     timeout = setTimeout(() => {
       cb();
       calling = false;
-    }, debounceValue);
+    }, debounce);
   }
 
   onMount(() => {
-    if ($$props.autofocus) {
-      window.requestAnimationFrame(() => {
-        input.focus();
-      });
-    }
-
-    return () => {
-      if (timeout !== undefined) {
-        clearTimeout(timeout);
-      }
-    };
+    if (autofocus) window.requestAnimationFrame(() => ref.focus());
+    return () => clearTimeout(timeout);
   });
 
   afterUpdate(() => {
     if (value.length > 0 && value !== prevValue) {
-      if (debounce) {
-        debounced(() => dispatch("type"));
+      if (debounce > 0) {
+        debounced(() => dispatch("type", value));
       } else {
-        dispatch("type");
+        dispatch("type", value);
       }
     }
 
-    if (value.length === 0 && prevValue.length > 0) {
-      dispatch("clear");
-    }
+    if (value.length === 0 && prevValue.length > 0) dispatch("clear");
 
     prevValue = value;
   });
@@ -80,18 +65,19 @@
   }
 </style>
 
-<form
-  class="svelte-search"
-  role="search"
-  aria-labelledby={id}
-  on:submit|preventDefault>
-  <label id="{id}-label" for={id} class:hide-label={hideLabel}>{label}</label>
+<form data-svelte-search role="search" aria-labelledby={id} on:submit|preventDefault>
+  <label id="{id}-label" for={id} class:hide-label={hideLabel}>
+    <slot name="label">{label}</slot>
+  </label>
   <input
-    {...$$restProps}
-    bind:this={input}
+    bind:this={ref}
+    name="search"
     type="search"
+    placeholder="Search..."
+    autocomplete="off"
+    spellcheck="false"
+    {...$$restProps}
     {id}
-    {name}
     bind:value
     on:input
     on:change
