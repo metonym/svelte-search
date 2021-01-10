@@ -4,7 +4,13 @@
 
 > Customizable search input component for Svelte.
 
-This is a plain search component composed using semantic `form` and `input` elements. Check out [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search component with dropdown results.
+This search component is composed using semantic `form` and `input` elements.
+
+Check out [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search component with dropdown results.
+
+<!-- REPO_URL -->
+
+---
 
 <!-- TOC -->
 
