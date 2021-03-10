@@ -4,11 +4,11 @@
 
 > Customizable search input component for Svelte.
 
+<!-- REPO_URL -->
+
 This search component is composed using semantic `form` and `input` elements.
 
-Check out [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search component with dropdown results.
-
-<!-- REPO_URL -->
+See [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search component with dropdown results.
 
 ---
 
@@ -38,7 +38,6 @@ npm i -D svelte-search
 
 ### Basic
 
-<!-- prettier-ignore-start -->
 ```svelte
 <script>
   import Search from "svelte-search";
@@ -50,29 +49,27 @@ npm i -D svelte-search
 
 {value}
 ```
-<!-- prettier-ignore-end -->
 
 ### Label + placeholder
 
 `$$restProps` are forwarded to the input element.
 
-<!-- prettier-ignore-start -->
 ```svelte
 <Search label="My label" placeholder="Placeholder text..." />
 ```
-<!-- prettier-ignore-end -->
 
-### Autofocus
+### Focus (declarative)
 
-<!-- prettier-ignore-start -->
+Use the `autofocus` prop to declaratively focus the input.
+
 ```html
 <Search autofocus />
 ```
-<!-- prettier-ignore-end -->
 
-### Focus programmatically
+### Focus (programmatic)
 
-<!-- prettier-ignore-start -->
+Bind the `ref` prop to programmatically focus the input.
+
 ```svelte
 <script>
   let ref = null;
@@ -80,17 +77,13 @@ npm i -D svelte-search
 
 <Search bind:ref />
 
-<button type="button" on:click={() => ref.focus()}>
-  Focus
-</button>
+<button on:click={() => ref.focus()}>Focus</button>
 ```
-<!-- prettier-ignore-end -->
 
 ### Debounced input
 
 Use the `debounce` prop to specify the debounce value in milliseconds.
 
-<!-- prettier-ignore-start -->
 ```svelte
 <script>
   let events = [];
@@ -99,24 +92,21 @@ Use the `debounce` prop to specify the debounce value in milliseconds.
 <Search
   bind:value
   debounce={800}
-  on:type={() => events = [...events, value]}
+  on:type={() => (events = [...events, value])}
 />
 
 {#each events as event}
   <div>{event}</div>
 {/each}
 ```
-<!-- prettier-ignore-end -->
 
 ### Label slot
 
-<!-- prettier-ignore-start -->
 ```svelte
 <Search>
-  <span slot="label">Custom label</span>
+  <span slot="label" style="color: red;">Custom label</span>
 </Search>
 ```
-<!-- prettier-ignore-end -->
 
 ## API
 
@@ -137,29 +127,27 @@ This component forwards `$$restProps` to the input element.
 ### Forwarded events
 
 - on:input
-- on:type
-- on:submit
 - on:change
+- on:submit
 - on:focus
 - on:blur
 - on:keydown
 
 ### Dispatched events
 
-- on:type
-- on:clear
+- **on:type**: fired when the the input value is updated
+- **on:clear**: fired when clicking the "X" button to clear the input value
 
-<!-- prettier-ignore-start -->
 ```svelte
 <Search
   on:type={(e) => {
-    console.log("type", e.detail); // string
+    console.log("type", e.detail); // input value
   }}
-  on:clear={(e) => {
+  on:clear={() => {
     console.log("clear");
-  }} />
-````
-<!-- prettier-ignore-end -->
+  }}
+/>
+```
 
 ## TypeScript
 
