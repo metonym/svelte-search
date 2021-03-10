@@ -114,15 +114,17 @@ This component forwards `$$restProps` to the input element.
 
 ### Props
 
-| Prop name     | Value                          |
-| :------------ | :----------------------------- |
-| id            | `string`                       |
-| label         | `string` (default: `"Search"`) |
-| hideLabel     | `boolean` (default: `false`)   |
-| name          | `string` (default: `"search"`) |
-| value         | `string` (default: `"value"`)  |
-| debounce      | `boolean` (default: `false`)   |
-| debounceValue | `number` (default: `250`)      |
+| Prop name     | Value                                |
+| :------------ | :----------------------------------- |
+| autofocus     | `boolean` (default: `false`)         |
+| id            | `string`                             |
+| label         | `string` (default: `"Search"`)       |
+| hideLabel     | `boolean` (default: `false`)         |
+| name          | `string` (default: `"search"`)       |
+| value         | `string` (default: `"value"`)        |
+| debounce      | `boolean` (default: `false`)         |
+| debounceValue | `number` (default: `250`)            |
+| ref           | `HTMLInputElement` (default: `null`) |
 
 ### Forwarded events
 
