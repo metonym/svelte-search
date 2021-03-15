@@ -11,6 +11,7 @@
   export let hideLabel = false;
   export let id = "search" + Math.random().toString(36);
   export let ref = null;
+  export let removeFormAriaAttributes = false;
 
   import { createEventDispatcher, onMount, afterUpdate } from "svelte";
 
@@ -65,7 +66,7 @@
   }
 </style>
 
-<form data-svelte-search role="search" aria-labelledby={id} on:submit|preventDefault>
+<form data-svelte-search role={removeFormAriaAttributes ? null : "search"} aria-labelledby={removeFormAriaAttributes ? null : id} on:submit|preventDefault>
   <label id="{id}-label" for={id} class:hide-label={hideLabel}>
     <slot name="label">{label}</slot>
   </label>
