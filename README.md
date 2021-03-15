@@ -125,6 +125,7 @@ This component forwards `$$restProps` to the input element.
 | debounce      | `boolean` (default: `false`)         |
 | debounceValue | `number` (default: `250`)            |
 | ref           | `HTMLInputElement` (default: `null`) |
+| removeFormAriaAttributes | `boolean` (default: `false`) |
 
 ### Forwarded events
 

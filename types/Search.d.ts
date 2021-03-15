@@ -1,7 +1,8 @@
 /// <reference types="svelte" />
 import { SvelteComponentTyped } from "svelte";
 
-export interface SearchProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["input"]> {
+export interface SearchProps
+  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["input"]> {
   /**
    * @default ""
    */
@@ -36,11 +37,11 @@ export interface SearchProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNam
    * @default null
    */
   ref?: null | HTMLInputElement;
-  
+
   /**
    * @default false
    */
-  removeFormAriaAttributes ?: boolean;
+  removeFormAriaAttributes?: boolean;
 }
 
 export default class Search extends SvelteComponentTyped<

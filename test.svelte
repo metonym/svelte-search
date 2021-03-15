@@ -2,7 +2,7 @@
   import Search from "./types";
 
   let value = "";
-  let events = [];
+  let events: string[] = [];
 </script>
 
 <Search
@@ -10,8 +10,10 @@
   label="My label"
   placeholder="Placeholder text..."
   debounce={800}
+  removeFormAriaAttributes={true}
   on:type={(e) => (events = [...events, e.detail])}
-  on:clear>
+  on:clear
+>
   <span slot="label">Custom label</span>
 </Search>
 
