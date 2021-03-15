@@ -36,6 +36,11 @@ export interface SearchProps extends svelte.JSX.HTMLAttributes<HTMLElementTagNam
    * @default null
    */
   ref?: null | HTMLInputElement;
+  
+  /**
+   * @default false
+   */
+  removeFormAriaAttributes ?: boolean;
 }
 
 export default class Search extends SvelteComponentTyped<
