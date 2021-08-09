@@ -122,8 +122,7 @@ This component forwards `$$restProps` to the input element.
 | hideLabel     | `boolean` (default: `false`)         |
 | name          | `string` (default: `"search"`)       |
 | value         | `string` (default: `"value"`)        |
-| debounce      | `boolean` (default: `false`)         |
-| debounceValue | `number` (default: `250`)            |
+| debounce      | `number` (default: `0`)              |
 | ref           | `HTMLInputElement` (default: `null`) |
 | removeFormAriaAttributes | `boolean` (default: `false`) |
 
