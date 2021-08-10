@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Search from "./types";
+  import Search from "../types";
 
   let value = "";
   let events: string[] = [];
