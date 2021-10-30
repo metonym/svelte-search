@@ -2,7 +2,7 @@
 
 [![NPM][npm]][npm-url]
 
-> Customizable search input component for Svelte.
+> Accessible, customizable Svelte search component.
 
 <!-- REPO_URL -->
 

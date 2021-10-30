@@ -2,7 +2,7 @@
   "name": "svelte-search",
   "version": "1.1.0",
   "license": "MIT",
-  "description": "Customizable search input component for Svelte",
+  "description": "Accessible, customizable Svelte search component",
   "author": "Eric Liu (https://github.com/metonym)",
   "svelte": "./src/index.js",
   "main": "./src/index.js",
@@ -31,7 +31,10 @@
     "svelte",
     "svelte component",
     "search",
-    "debounce"
+    "debounce",
+    "accessible",
+    "form",
+    "input"
   ],
   "files": [
     "lib",
