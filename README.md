@@ -40,9 +40,12 @@ This component is unstyled by design. Target the component using the `[data-svel
 
 ```css
 :global([data-svelte-search] input) {
-  font-size: 1.5rem;
-  padding: 1rem;
-  border: 2px solid #e0e0e0;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 0.25rem;
 }
 ```
 
@@ -62,6 +65,14 @@ This component is unstyled by design. Target the component using the `[data-svel
 {#if value}
   <button on:click={() => (value = "")}>Clear "{value}"</button>
 {/if}
+```
+
+### on:submit
+
+The `input` element is contained in a `form`. Use the forwarded `submit` event to obtain the value when pressing "Enter."
+
+```svelte
+<Search bind:value on:submit={() => console.log("submit", value)} />
 ```
 
 ### Label with placeholder text
