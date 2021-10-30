@@ -10,6 +10,8 @@ This search component is composed using semantic `form` and `input` elements.
 
 See [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search component with dropdown results.
 
+Try it in the [Svelte REPL](https://svelte.dev/repl/5e14a2cff1b9488fa4ffbff980c1f21d).
+
 ---
 
 <!-- TOC -->
