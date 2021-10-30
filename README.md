@@ -124,19 +124,18 @@ Use the `debounce` prop to specify the debounce value in milliseconds.
 </script>
 
 <Search
-  bind:value
   debounce={800}
-  on:type={() => (events = [...events, value])}
+  on:type={({ detail: value }) => (events = [...events, value])}
 />
 
-{#each events as event}
-  <div>{event}</div>
-{/each}
+<pre>
+  {JSON.stringify(events, null, 2)}
+</pre>
 ```
 
 ## API
 
-This component forwards `$$restProps` to the input element.
+`$$restProps` are forwarded to the input element.
 
 ### Props
 
@@ -147,7 +146,6 @@ This component forwards `$$restProps` to the input element.
 | hideLabel                | `boolean`          | `false`                                 |
 | debounce                 | `number`           | `0`                                     |
 | ref                      | `HTMLInputElement` | `null`                                  |
-| name                     | `string`           | `"search"`                              |
 | id                       | `string`           | `"search" + Math.random().toString(36)` |
 | removeFormAriaAttributes | `boolean`          | `false`                                 |
 | autofocus                | `boolean`          | `false`                                 |
