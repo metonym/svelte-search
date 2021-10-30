@@ -14,19 +14,29 @@ See [svelte-typeahead](https://github.com/metonym/svelte-typeahead) for a search
 
 <!-- TOC -->
 
-## Install
+## Installation
+
+**Yarn**
 
 ```bash
 yarn add -D svelte-search
-# OR
+```
+
+**NPM**
+
+```bash
 npm i -D svelte-search
 ```
 
-## Usage
+**pnpm**
 
-### Styling
+```bash
+pnpm i -D svelte-search
+```
 
-**Note:** this component is unstyled by default. You can target the component using the `[data-svelte-search]` selector.
+## Styling
+
+This component is unstyled by design. Target the component using the `[data-svelte-search]` selector.
 
 ```css
 :global([data-svelte-search] input) {
@@ -36,7 +46,9 @@ npm i -D svelte-search
 }
 ```
 
-### Basic
+## Usage
+
+### Two-way binding
 
 ```svelte
 <script>
@@ -47,10 +59,12 @@ npm i -D svelte-search
 
 <Search bind:value />
 
-{value}
+{#if value}
+  <button on:click={() => (value = "")}>Clear "{value}"</button>
+{/if}
 ```
 
-### Label + placeholder
+### Label with placeholder text
 
 `$$restProps` are forwarded to the input element.
 
@@ -58,11 +72,27 @@ npm i -D svelte-search
 <Search label="My label" placeholder="Placeholder text..." />
 ```
 
+### Label slot
+
+```svelte
+<Search>
+  <span slot="label" style="color: red;">Custom label</span>
+</Search>
+```
+
+### Visually hidden label
+
+Set `hideLabel` to `true` to visually hide the label.
+
+```svelte
+<Search hideLabel label="My label" placeholder="Placeholder text..." />
+```
+
 ### Focus (declarative)
 
 Use the `autofocus` prop to declaratively focus the input.
 
-```html
+```svelte no-eval
 <Search autofocus />
 ```
 
@@ -72,6 +102,8 @@ Bind the `ref` prop to programmatically focus the input.
 
 ```svelte
 <script>
+  import Search from "svelte-search";
+
   let ref = null;
 </script>
 
@@ -86,45 +118,37 @@ Use the `debounce` prop to specify the debounce value in milliseconds.
 
 ```svelte
 <script>
+  import Search from "svelte-search";
+
   let events = [];
 </script>
 
 <Search
-  bind:value
   debounce={800}
-  on:type={() => (events = [...events, value])}
+  on:type={({ detail: value }) => (events = [...events, value])}
 />
 
-{#each events as event}
-  <div>{event}</div>
-{/each}
-```
-
-### Label slot
-
-```svelte
-<Search>
-  <span slot="label" style="color: red;">Custom label</span>
-</Search>
+<pre>
+  {JSON.stringify(events, null, 2)}
+</pre>
 ```
 
 ## API
 
-This component forwards `$$restProps` to the input element.
+`$$restProps` are forwarded to the input element.
 
 ### Props
 
-| Prop name     | Value                                |
-| :------------ | :----------------------------------- |
-| autofocus     | `boolean` (default: `false`)         |
-| id            | `string`                             |
-| label         | `string` (default: `"Search"`)       |
-| hideLabel     | `boolean` (default: `false`)         |
-| name          | `string` (default: `"search"`)       |
-| value         | `string` (default: `"value"`)        |
-| debounce      | `number` (default: `0`)              |
-| ref           | `HTMLInputElement` (default: `null`) |
-| removeFormAriaAttributes | `boolean` (default: `false`) |
+| Prop name                | Type               | Default value                           |
+| :----------------------- | :----------------- | :-------------------------------------- |
+| value                    | `string`           | `""`                                    |
+| label                    | `string`           | `"Search"`                              |
+| hideLabel                | `boolean`          | `false`                                 |
+| debounce                 | `number`           | `0`                                     |
+| ref                      | `HTMLInputElement` | `null`                                  |
+| id                       | `string`           | `"search" + Math.random().toString(36)` |
+| removeFormAriaAttributes | `boolean`          | `false`                                 |
+| autofocus                | `boolean`          | `false`                                 |
 
 ### Forwarded events
 
@@ -154,6 +178,8 @@ This component forwards `$$restProps` to the input element.
 ## TypeScript
 
 Svelte version 3.31 or greater is required to use this component with TypeScript.
+
+TypeScript definitions are located in the [types folder](./types).
 
 ## Changelog
 
