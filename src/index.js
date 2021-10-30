@@ -1,3 +1,1 @@
-import Search from "./Search.svelte";
-
-export default Search;
+export { default } from "./Search.svelte";
