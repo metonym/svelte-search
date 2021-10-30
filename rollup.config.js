@@ -29,7 +29,7 @@ export default () => {
         file: UMD ? pkg.main : pkg.module,
         name: UMD ? pkg.name : undefined,
       },
-      plugins: [svelte({ emitCss: false }), resolve()],
+      plugins: [svelte(), resolve()],
     };
   });
 };

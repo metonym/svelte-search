@@ -56,7 +56,12 @@
   aria-labelledby={removeFormAriaAttributes ? null : id}
   on:submit|preventDefault
 >
-  <label id="{id}-label" for={id} class:hide-label={hideLabel}>
+  <label
+    id="{id}-label"
+    for={id}
+    style={hideLabel &&
+      "position: absolute;height: 1px;width: 1px;overflow: hidden;clip: rect(1px 1px 1px 1px);clip: rect(1px, 1px, 1px, 1px);white-space: nowrap;"}
+  >
     <slot name="label">{label}</slot>
   </label>
   <input
@@ -76,19 +81,3 @@
     on:keydown
   />
 </form>
-
-<style>
-  /**
-  * Visually hide content without breaking screen readers
-  * https://a11yproject.com/posts/how-to-hide-content/
-  */
-  .hide-label {
-    position: absolute;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px);
-    clip: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap;
-  }
-</style>
