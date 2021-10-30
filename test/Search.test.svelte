@@ -1,5 +1,6 @@
 <script lang="ts">
   import Search from "../types";
+  import SearchComponent from "../types/Search.svelte";
 
   let value = "";
   let events: string[] = [];
@@ -24,4 +25,5 @@
   <span slot="label">Custom label</span>
 </Search>
 
-{value}
+<!-- svelte-ignore missing-declaration -->
+<SearchComponent bind:value />
