@@ -1,1 +1,1 @@
-export { default as default } from "./Search.svelte";
+export { default } from "./Search.svelte";
