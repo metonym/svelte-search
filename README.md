@@ -36,12 +36,6 @@ npm i -D svelte-search
 pnpm i -D svelte-search
 ```
 
-**pnpm**
-
-```bash
-pnpm i -D svelte-search
-```
-
 ## Styling
 
 This component is unstyled by design. Target the component using the `[data-svelte-search]` selector.
