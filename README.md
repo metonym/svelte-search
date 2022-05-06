@@ -141,9 +141,7 @@ Use the `debounce` prop to specify the debounce value in milliseconds.
   on:type={({ detail: value }) => (events = [...events, value])}
 />
 
-<pre>
-  {JSON.stringify(events, null, 2)}
-</pre>
+<pre>{JSON.stringify(events, null, 2)}</pre>
 ```
 
 ## API
