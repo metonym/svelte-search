@@ -9,6 +9,7 @@
   "module": "./src/index.js",
   "types": "./types/index.d.ts",
   "sideEffects": false,
+  "type": "module",
   "scripts": {
     "dev": "rollup -cw",
     "predeploy": "rollup -c",
