@@ -1,11 +1,20 @@
-name: CI
-on: [push, pull_request]
+on:
+  pull_request:
+  push:
+    branches: [master]
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Install dependencies and validate TypeScript definitions
+      - uses: actions/checkout@v4
+      - uses: actions/cache@v3
+        id: yarn-cache
+        with:
+          path: "**/node_modules"
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+
+      - name: Install dependencies, build, test, and lint the codebase
         run: |
           yarn
           yarn test
