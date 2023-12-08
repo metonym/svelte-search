@@ -1,8 +1,9 @@
-/// <reference types="svelte" />
-import { SvelteComponentTyped } from "svelte";
+import type { SvelteComponentTyped } from "svelte";
+import type { SvelteHTMLElements } from "svelte/elements";
 
-export interface SearchProps
-  extends svelte.JSX.HTMLAttributes<HTMLElementTagNameMap["input"]> {
+type RestProps = SvelteHTMLElements["input"];
+
+export interface SearchProps extends RestProps {
   /**
    * Specify the input value
    * @default ""
