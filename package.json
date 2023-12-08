@@ -1,6 +1,6 @@
 {
   "name": "svelte-search",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "license": "MIT",
   "description": "Accessible, customizable Svelte search component",
   "author": "Eric Liu (https://github.com/metonym)",
