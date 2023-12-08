@@ -11,12 +11,9 @@
   "type": "module",
   "scripts": {
     "dev": "rollup -cw",
-    "predeploy": "rollup -c",
-    "deploy": "gh-pages -d dist",
     "test": "svelte-check --workspace test"
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
     "svelte": "^4.2.8",
     "svelte-check": "^3.6.2",
     "svelte-readme": "^3.6.0"
