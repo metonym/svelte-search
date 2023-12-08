@@ -7,8 +7,7 @@
   "svelte": "./src/index.js",
   "main": "./src/index.js",
   "module": "./src/index.js",
-  "types": "./types/index.d.ts",
-  "sideEffects": false,
+  "types": "./src/index.d.ts",
   "type": "module",
   "scripts": {
     "dev": "rollup -cw",
@@ -38,8 +37,6 @@
     "input"
   ],
   "files": [
-    "lib",
-    "src",
-    "types"
+    "src"
   ]
 }

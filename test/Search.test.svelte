@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Search from "../types";
-  import SearchComponent from "../types/Search.svelte";
+  import Search from "../src";
+  import SearchComponent from "../src/Search.svelte";
 
   let value = "";
   let events: string[] = [];
