@@ -6,7 +6,6 @@
   let events: string[] = [];
 </script>
 
-<!-- svelte-ignore missing-declaration -->
 <Search
   bind:value
   label="My label"
@@ -25,5 +24,4 @@
   <span slot="label">Custom label</span>
 </Search>
 
-<!-- svelte-ignore missing-declaration -->
 <SearchComponent bind:value />
