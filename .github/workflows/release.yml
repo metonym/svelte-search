@@ -22,5 +22,5 @@ jobs:
         # Currently, only npm supports publishing packages with provenance
         # https://docs.npmjs.com/generating-provenance-statements
         run: |
-          npm install --force
+          yarn install
           npm publish --provenance --access public
