@@ -82,6 +82,7 @@
   data-svelte-search
   role={removeFormAriaAttributes ? null : "search"}
   aria-labelledby={removeFormAriaAttributes ? null : id}
+  action=""
   on:submit|preventDefault
 >
   <label
