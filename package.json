@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/metonym/svelte-search.git"
+    "url": "git+https://github.com/metonym/svelte-search.git"
   },
   "homepage": "https://github.com/metonym/svelte-search",
   "bugs": "https://github.com/metonym/svelte-search/issues",
