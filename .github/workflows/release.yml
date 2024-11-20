@@ -11,14 +11,16 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
       - uses: actions/setup-node@v4
         with:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
+
+      - name: Prune package.json
+        run: bun run build:prune-package
+
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-
-        # Currently, only npm supports publishing packages with provenance
-        # https://docs.npmjs.com/generating-provenance-statements
         run: npm publish --provenance --access public
