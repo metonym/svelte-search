@@ -18,22 +18,19 @@ Try it in the [Svelte REPL](https://svelte.dev/repl/5e14a2cff1b9488fa4ffbff980c1
 
 ## Installation
 
-**Yarn**
 
 ```bash
-yarn add -D svelte-search
-```
+# npm
+npm i svelte-search
 
-**NPM**
+# pnpm
+pnpm i svelte-search
 
-```bash
-npm i -D svelte-search
-```
+# Yarn
+yarn add svelte-search
 
-**pnpm**
-
-```bash
-pnpm i -D svelte-search
+# Bun
+bun add svelte-search
 ```
 
 ## Styling
