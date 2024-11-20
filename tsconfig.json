@@ -1,0 +1,20 @@
+{
+    "compilerOptions": {
+      "noEmit": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "verbatimModuleSyntax": true,
+      "isolatedModules": true,
+      "target": "ESNext",
+      "module": "ESNext",
+      "moduleResolution": "node",
+      "strict": true,
+      "types": ["svelte"],
+      "paths": {
+        "svelte-search": ["./src"],
+        "svelte-search/*": ["./src/*"]
+      }
+    },
+    "include": ["src", "tests"]
+  }
+  
