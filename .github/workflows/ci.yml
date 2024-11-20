@@ -4,17 +4,14 @@ on:
     branches: [master]
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/cache@v4
-        id: yarn-cache
-        with:
-          path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - uses: oven-sh/setup-bun@v2
 
-      - name: Unit tests
-        run: |
-          yarn
-          yarn test
+      - name: Install dependencies
+        run: bun install
+
+      - name: Run unit tests
+        run: bun run test
