@@ -183,12 +183,6 @@ Use the `debounce` prop to specify the debounce value in milliseconds.
 />
 ```
 
-## TypeScript
-
-Svelte version 3.31 or greater is required to use this component with TypeScript.
-
-TypeScript definitions are located in the [types folder](./types).
-
 ## Changelog
 
 [Changelog](CHANGELOG.md)
