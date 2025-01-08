@@ -29,11 +29,11 @@
     "test": "svelte-check --workspace tests"
   },
   "devDependencies": {
-    "@types/bun": "^1.1.13",
+    "@types/bun": "^1.1.15",
     "svelte": "^4.2.19",
-    "svelte-check": "^4.0.9",
-    "svelte-readme": "^3.6.0",
-    "typescript": "^5.6.3"
+    "svelte-check": "^4.1.1",
+    "svelte-readme": "^3.6.3",
+    "typescript": "^5.7.2"
   },
   "repository": {
     "type": "git",
