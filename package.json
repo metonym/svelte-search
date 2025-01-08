@@ -25,11 +25,11 @@
   },
   "scripts": {
     "dev": "rollup -cw",
-    "build:prune-package": "bun scripts/prune-package.ts",
     "test": "svelte-check --workspace tests"
   },
   "devDependencies": {
     "@types/bun": "^1.1.15",
+    "culls": "^0.1.1",
     "svelte": "^4.2.19",
     "svelte-check": "^4.1.1",
     "svelte-readme": "^3.6.3",
