@@ -64,15 +64,19 @@
   });
 
   afterUpdate(() => {
-    if (value.length > 0 && value !== prevValue) {
-      if (debounce > 0) {
+    if (value !== prevValue) {
+      // If clearing (going from text to empty), dispatch immediately.
+      if (prevValue.length > 0 && value.length === 0) {
+        dispatch("type", value);
+        dispatch("clear");
+      } else if (debounce > 0) {
+        // For typing/changes, use debounce.
         debounceFn(() => dispatch("type", value));
       } else {
+        // No debounce, dispatch immediately.
         dispatch("type", value);
       }
     }
-
-    if (value.length === 0 && prevValue.length > 0) dispatch("clear");
 
     prevValue = value;
   });

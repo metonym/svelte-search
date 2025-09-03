@@ -126,6 +126,8 @@ Bind the `ref` prop to programmatically focus the input.
 
 Use the `debounce` prop to specify the debounce value in milliseconds.
 
+If clearing the value, both the `on:type` and `on:clear` events will immediately be dispatched.
+
 ```svelte
 <script>
   import Search from "svelte-search";
